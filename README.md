@@ -1,36 +1,39 @@
 # Pandas to Polars Skill for Humans and Agents
 
-A markdown-first migration pack for analysts and engineers moving from pandas to Polars. It focuses on expression-oriented thinking, lazy execution, join patterns, aggregation, and performance-sensitive table transforms.
+A migration pack for analysts and engineers moving from pandas to Polars.
 
-The goal is not to transliterate pandas one-liners. The goal is to help people stop writing row-wise Python in a columnar, expression-driven system.
+The big win is not just speed. It is learning to think in expressions, lazy plans, and schema-aware transforms instead of row-wise Python.
 
-## Best use
+## What makes this repo more useful now
 
-- rewriting pandas notebooks into faster Polars pipelines
-- teaching teams when to choose eager vs lazy Polars
-- mapping `assign`, `groupby`, `merge`, and window logic into Polars expressions
-- reviewing pull requests where pandas muscle memory is hurting Polars performance
+- A stronger learning path for self-study and onboarding
+- A worked example that shows the migration or debugging move end to end
+- A mental-model diagram for fast orientation
+- A review checklist for code review or design review
+- Portable agent files for Codex, Copilot, Cursor, and Antigravity
 
-## Core topics
+## Learning path
 
-- expression-oriented transforms instead of row-wise mutation
-- lazy plans, projection pushdown, and query optimization
-- grouping, joins, sorting, and window functions
-- schema strictness, null handling, and conditional columns
-- SQL interface and interoperability patterns
+- Start with Polars expressions and contexts before learning every API surface.
+- Move into lazy execution and understand what `collect()` does to optimization opportunities.
+- Practice group-by, joins, window functions, and typed null handling on realistic analytics flows.
+- Use SQL interface and interoperability only after the expression model feels natural.
 
-## Questions this pack should answer well
+## High-signal traps
 
-- What is the Polars equivalent of `assign` plus `query`?
-- How should I translate a pandas `groupby().agg()` chain?
-- When should I use `LazyFrame` instead of `DataFrame`?
-- How do I stop writing `apply` for work Polars expressions can vectorize?
+- Rebuilding pandas-style `apply` logic instead of using expressions.
+- Calling `collect()` too early and throwing away lazy optimization.
+- Ignoring schema mismatches on joins and patching around them later.
+- Treating Polars as a drop-in pandas clone instead of a different execution model.
 
-## When not to use this pack
+## Read this next
 
-- tiny one-off CSV scripts where pandas is already fine
-- full Spark-scale distributed pipeline design
-- deep Arrow internals or Polars engine implementation details
+- Main portable guide: `AGENTS.md`
+- Decision guide: `docs/decision-guide.md`
+- Worked example: `examples/worked-example.md`
+- Mental-model diagram: `docs/mental-model-map.md`
+- Review checklist: `docs/review-checklist.md`
+- Official references: `official-references.md`
 
 ## Agent formats
 
@@ -40,9 +43,3 @@ The goal is not to transliterate pandas one-liners. The goal is to help people s
 - Cursor rule: `.cursor/rules/pandas-polars-atlas.mdc`
 - Antigravity-style rule: `.agent/rules/pandas-polars-atlas.md`
 - Antigravity-style skill: `.agent/skills/pandas-polars-atlas/`
-
-## Source policy
-
-- Prefer official framework and library docs first.
-- Prefer official GitHub org repos second.
-- Re-check official docs when framework behavior may have changed.

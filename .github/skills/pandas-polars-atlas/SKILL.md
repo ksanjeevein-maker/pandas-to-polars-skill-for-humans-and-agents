@@ -35,3 +35,9 @@ Use this skill to answer the practical question, "what is the target-platform wa
 - Reach for lazy execution when the pipeline has multiple filters, joins, or aggregations.
 - Avoid `apply` unless the transform cannot be expressed with Polars native expressions.
 - Treat schema and null behavior as explicit design choices, not afterthoughts.
+
+## Extended references
+
+- Read `references/decision-guide.md` when the user needs a migration path or sequence.
+- Read `references/worked-example.md` when a concrete example would help.
+- Read `references/review-checklist.md` when reviewing an implementation or plan.

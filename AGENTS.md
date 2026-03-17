@@ -1,46 +1,37 @@
-# Pandas to Polars Atlas Codex and Agent Guide
+# Pandas to Polars Skill for Humans and Agents Codex and Agent Guide
 
-Use this repository when a task involves:
-
-- rewriting pandas notebooks into faster Polars pipelines
-- teaching teams when to choose eager vs lazy Polars
-- mapping `assign`, `groupby`, `merge`, and window logic into Polars expressions
-- reviewing pull requests where pandas muscle memory is hurting Polars performance
+Use this repository when you need a higher-signal explanation, migration pattern, or review aid for this topic.
 
 ## Preferred workflow
 
-1. Identify the source habit, framework concept, or failure mode first.
-2. Translate the mental model before jumping to code.
-3. Use the local skill references instead of inventing mappings from memory.
-4. Prefer native target-platform patterns over transliteration.
-5. Add official links when the user wants citations or deeper study.
+1. Read `docs/decision-guide.md` when the user needs a migration path, tradeoff call, or phased plan.
+2. Read `docs/mental-model-map.md` when the user needs the big picture first.
+3. Read `examples/worked-example.md` when the user would benefit from an end-to-end example.
+4. Read `docs/review-checklist.md` when reviewing a migration, implementation, or design.
+5. Read `official-references.md` when the user wants citations or deeper study.
+6. Use the repo-local skill folders when the agent environment supports them.
 
 ## Primary local references
 
-- Skill entrypoint: `.github/skills/pandas-polars-atlas/SKILL.md`
-- Antigravity-style skill entrypoint: `.agent/skills/pandas-polars-atlas/SKILL.md`
-- Concept mappings: `.github/skills/pandas-polars-atlas/references/concepts.md`
-- Rewrite patterns: `.github/skills/pandas-polars-atlas/references/patterns.md`
-- Official links: `.github/skills/pandas-polars-atlas/references/official-links.md`
-- Human reference pack: `official-references.md`
+- Decision guide: `docs/decision-guide.md`
+- Worked example: `examples/worked-example.md`
+- Mental-model diagram: `docs/mental-model-map.md`
+- Review checklist: `docs/review-checklist.md`
+- Official reference pack: `official-references.md`
+- Copilot skill entrypoint: `.github/skills/pandas-polars-atlas/SKILL.md`
+- Antigravity skill entrypoint: `.agent/skills/pandas-polars-atlas/SKILL.md`
 
 ## Output shape
 
-- Start with the target-side equivalent in one sentence.
+- Start with the target-side or corrected approach in one sentence.
 - Explain the mental shift in plain language.
-- Show a concise mapping, pattern, or checklist.
-- Call out 1-3 practical watchouts.
+- Use the worked example or checklist when it sharpens the answer.
+- Call out the biggest traps explicitly.
 - Add official links only when useful.
 
 ## Guardrails
 
-- Prefer expression APIs over Python callbacks.
-- Reach for lazy execution when the pipeline has multiple filters, joins, or aggregations.
-- Avoid `apply` unless the transform cannot be expressed with Polars native expressions.
-- Treat schema and null behavior as explicit design choices, not afterthoughts.
-
-## Source preference
-
-1. Official docs
-2. Official organization repos
-3. Local reference files in this repository
+- Rebuilding pandas-style `apply` logic instead of using expressions.
+- Calling `collect()` too early and throwing away lazy optimization.
+- Ignoring schema mismatches on joins and patching around them later.
+- Treating Polars as a drop-in pandas clone instead of a different execution model.
