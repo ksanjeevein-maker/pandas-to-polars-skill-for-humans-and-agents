@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pandas to Polars Atlas"
+  short_description: "Map pandas habits into idiomatic Polars"
+  default_prompt: "Use $pandas-polars-atlas to explain the target-side pattern, mindset shift, and official references for this task."

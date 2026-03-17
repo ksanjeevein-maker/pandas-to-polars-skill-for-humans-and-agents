@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.venv/
+.idea/
+.vscode/
